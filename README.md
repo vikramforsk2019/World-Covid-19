@@ -2,6 +2,6 @@
 The goal of this project is to provide a simple, interactive way to visualize the impact of COVID-19.
 # Dataset
 The data is from Worldometer's real-time updates, utilizing reliable sources from around the world. 
-https://www.worldometers.info/
+https://www.worldometers.info/coronavirus/
 # Scrap/Daily Update
-python data_scrap.py
+ $ python data_scrap.py
