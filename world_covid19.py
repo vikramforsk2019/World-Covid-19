@@ -13,7 +13,7 @@ from datetime import datetime
 #from bs4 import BeautifulSoup as BS
 url="https://www.worldometers.info/coronavirus/"
 #driver path
-browser = webdriver.Firefox(executable_path="/home/jagveer/anaconda3/geckodriver")
+browser = webdriver.Firefox(executable_path="/home/vikram/anaconda3/geckodriver")
 browser.get(url)
 right_table=browser.find_element_by_class_name('table')
 
