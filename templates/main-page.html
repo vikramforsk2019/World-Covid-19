@@ -1,9 +1,3 @@
-<!--
-author: W3layouts
-author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -29,6 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 </head>
 <body>
+
 <!-- banner -->
 <div class="wthree_agile_admin_info">
 		  <!-- /w3_agileits_top_nav-->
@@ -65,7 +60,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									</ul>
 								</li>
 								
-								<li><a href="charts.html"> <i class="fa fa-line-chart" aria-hidden="true"></i> Charts</a></li>
+								<li><a href="{{ url_for('charts')}}"> <i class="fa fa-line-chart" aria-hidden="true"></i> Charts</a></li>
 								<li><a href="maps.html"><i class="fa fa-map-o" aria-hidden="true"></i> Maps</a></li>
 								<li class="page">
 									<a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Pages <i class="fa fa-angle-down" aria-hidden="true"></i></a>
@@ -96,7 +91,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									<li class="dropdown profile_details_drop">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
 											<div class="profile_img">	
-												<span class="prfil-img"><img src="static/images/admin.jpg" alt=""> </span> 
+												<span class="prfil-img"><img src="static/images/ram.jpg" alt=""> </span> 
 											</div>	
 										</a>
 										<ul class="dropdown-menu drp-mnu">
@@ -285,7 +280,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<!-- //nav -->
 			
 		</div>
-		<div class="clearfix"></div>
+
+				<div class="clearfix"></div>
 		<!-- //w3_agileits_top_nav-->
 		<!-- /inner_content-->
 				<div class="inner_content">
@@ -299,8 +295,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											
 											<i class="fa fa-building-o" aria-hidden="true"></i>
 											<div class="ca-content">
-												<h4 class="ca-main">16,808</h4>
-												<h3 class="ca-sub">New Companies</h3>
+
+												<h4 class="ca-main">{{tdeath}}</h4>
+												<h3 class="ca-sub">Total Deaths</h3>
 											</div>
 										</a>
 									</li>
@@ -308,8 +305,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<a href="#">
 										  <i class="fa fa-user" aria-hidden="true"></i>
 											<div class="ca-content">
-												<h4 class="ca-main one">26,808</h4>
-												<h3 class="ca-sub one">New Clients</h3>
+												<h4 class="ca-main one">{{total_confirm}}</h4>
+												<h3 class="ca-sub one">Total Confirm Cases</h3>
 											</div>
 										</a>
 									</li>
@@ -317,8 +314,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<a href="#">
 											<i class="fa fa-database" aria-hidden="true"></i>
 											<div class="ca-content">
-											<h4 class="ca-main two">29,008</h4>
-												<h3 class="ca-sub two">New Projects</h3>
+											<h4 class="ca-main two">{{total_recover}}</h4>
+												<h3 class="ca-sub two">Total Recover</h3>
 											</div>
 										</a>
 									</li>
@@ -326,8 +323,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<a href="#">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<div class="ca-content">
-												<h4 class="ca-main three">49,436</h4>
-												<h3 class="ca-sub three">Old Projects</h3>
+												<h4 class="ca-main three">{{total_active}}</h4>
+												<h3 class="ca-sub three">Total Active Cases</h3>
 											</div>
 										</a>
 									</li>
@@ -335,8 +332,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										<a href="#">
 											<i class="fa fa-clone" aria-hidden="true"></i>
 											<div class="ca-content">
-												<h4 class="ca-main four">30,808</h4>
-												<h3 class="ca-sub four">New Orders</h3>
+												<h4 class="ca-main four">{{tdeath*100//total_confirm}}%</h4>
+												<h3 class="ca-sub four">Total Average CFR</h3>
 											</div>
 										</a>
 									</li>
@@ -372,16 +369,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											  
 											</div>
 									   </div>
-									    <div class="col-md-6 agile_top_w3_post_info agile_info_shadow">
-										    <div class="img_wthee_post1">
-											<h3 class="w3_inner_tittle"> Flip Clock</h3>
-										       	<div class="main-example">
-													<div class="clock"></div>
-													<div class="message"></div>
-
-												</div>
-											</div>
-							            </div>
+									  <div class="col-md-6 bars_agileits agile_info_shadow">
+								   <h3 class="w3_inner_tittle two">Daily Updates</h3>
+										<div class='bar_group'>
+												<div class='bar_group__bar thin' label='Total Deaths' show_values='true' tooltip='true' value='{{tdeath}}'></div>
+												<div class='bar_group__bar thin' label='Total confirm' show_values='true' tooltip='true' value='{{total_confirm}}'></div>
+												<div class='bar_group__bar thin' label='Total Recovered' show_values='true' tooltip='true' value='{{total_recover}}'></div>
+												<div class='bar_group__bar thin' label='Active Cases' show_values='true' tooltip='true' value='{{total_active}}'></div>
+										</div>
+								</div>
 								       <div class="clearfix"></div>
 							     </div>
 								   
@@ -405,20 +401,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 									  <div class="skill-grids">
 											<div class="skills-grid text-center">
 												<div class="circle" id="circles-1"></div>
-												<p>HTML</p>
+												<p>Total Deaths</p>
 											</div>
 											<div class="skills-grid text-center">
 												<div class="circle" id="circles-2"></div>
-												<p>PHOTOGRAPHY</p>
+												<p>Total Confirm cases</p>
 											</div>
 											<div class="skills-grid text-center">
 												<div class="circle" id="circles-3"></div>
 												
-												<p>ILLUSTRATOR</p>
+												<p>Total Recover</p>
 											</div>
 											<div class="skills-grid text-center">
 												<div class="circle" id="circles-4"></div>
-												<p>CSS3</p>
+												<p>Active</p>
 											</div>
 												
 								
@@ -433,15 +429,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<div class="prograc-blocks_agileits">
 								
 								
-								 <div class="col-md-6 bars_agileits agile_info_shadow">
-								   <h3 class="w3_inner_tittle two">Daily Sales</h3>
-										<div class='bar_group'>
-												<div class='bar_group__bar thin' label='Rating' show_values='true' tooltip='true' value='343'></div>
-												<div class='bar_group__bar thin' label='Quality' show_values='true' tooltip='true' value='235'></div>
-												<div class='bar_group__bar thin' label='Amount' show_values='true' tooltip='true' value='550'></div>
-												<div class='bar_group__bar thin' label='Farming' show_values='true' tooltip='true' value='456'></div>
-										</div>
-								</div>
+								
 								<div class="col-md-6 fallowers_agile agile_info_shadow">
 									<h3 class="w3_inner_tittle two">Recent Followers</h3>
 												<div class="work-progres">
@@ -450,54 +438,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 														  <thead>
 															<tr>
 															  <th>#</th>
-															  <th>Project</th>
-															  <th>Manager</th>                                   
+															  <th>State</th>
+															  <th>Cases</th>                                   
 																								
-															  <th>Status</th>
-															  <th>Progress</th>
+															  <th>Recovered</th>
+															  <th>Deaths</th>
+															   <th>CFR</th>
 														  </tr>
 													  </thead>
 													  <tbody>
+													  	       {% for j in range(len) %}
 														<tr>
-														  <td>1</td>
-														  <td>Face book</td>
-														  <td>Malorum</td>                                 
-																					 
-														  <td><span class="label label-danger">in progress</span></td>
-														  <td><span class="badge badge-info">50%</span></td>
+														  <td>{{j}}</td>
+														  <td>{{ data['Name of State / UT'][j] }}</td>
+														    
+														    <td>{{data['Active Cases*'][j] |int}}</td>
+														    <td>{{data['Cured/Discharged/Migrated*'][j] |int}}</td>
+						 
+											<td><span class="label label-danger">{{data['Deaths**'][j] |int}}</span></td>
+
+	<td><span class="badge badge-info">{{data['Deaths**'][j]*100//data['Active Cases*'][j]}}%</span></td>
 													  </tr>
-													  <tr>
-														  <td>2</td>
-														  <td>Twitter</td>
-														  <td>Evan</td>                               
-																						  
-														  <td><span class="label label-success">completed</span></td>
-														  <td><span class="badge badge-success">100%</span></td>
-													  </tr>
-													  <tr>
-														  <td>3</td>
-														  <td>Google</td>
-														  <td>John</td>                                
-														  
-														  <td><span class="label label-warning">in progress</span></td>
-														  <td><span class="badge badge-warning">75%</span></td>
-													  </tr>
-													  <tr>
-														  <td>4</td>
-														  <td>LinkedIn</td>
-														  <td>Danial</td>                                 
-																					 
-														  <td><span class="label label-info">in progress</span></td>
-														  <td><span class="badge badge-info">65%</span></td>
-													  </tr>
-													  <tr>
-														  <td>5</td>
-														  <td>Tumblr</td>
-														  <td>David</td>                                
-																						 
-														  <td><span class="label label-warning">in progress</span></td>
-														  <td><span class="badge badge-danger">95%</span></td>
-													  </tr>
+													  {% endfor %}
 													  <tr>
 														  <td>6</td>
 														  <td>Tesla</td>
@@ -517,41 +479,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							  <!--//prograc-blocks_agileits-->
 						<!-- /bottom_agileits_grids-->
 						<div class="bottom_agileits_grids">
-						<div class="col-md-4 profile-main">
-						    <div class="profile_bg_agile">
-								<div class="profile-pic wthree">
-									<h2>Bason Durel</h2>
-									<img src="static/images/profile.jpg" alt="Image">
-									<p>Web Designer</p>
-								</div>
-								<div class="profile-ser">
-										<div class="follow-grids-agileits-w3layouts">
-											<div class="profile-ser-grids">
-												<h3>Followers</h3>
-												<h4>2486</h4>
-											</div>
-											<div class="profile-ser-grids agileinfo">
-												<h3>Following</h3>
-												<h4>1582</h4>
-											</div>
-											<div class="profile-ser-grids no-border">
-												<h3>Tweets</h3>
-												<h4>1468</h4>
-											</div>
-											<div class="clearfix"> </div>
-										</div>
-										<div class="w3l_social_icons w3l_social_icons1">
-											<ul>
-												<li><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-												<li><a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-												<li><a href="#" class="google_plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-											</ul>
-										</div>
-
-						        </div>
-								</div>
-					        </div>
-							<div class="col-md-8 chart_agile agile_info_shadow">
+					
+							<div class="col-md-12 chart_agile agile_info_shadow">
 							 <h3 class="w3_inner_tittle two">Stacked Bar Chart</h3>
 							    <div id="chartdiv1"></div>	
 							</div>
@@ -738,7 +667,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- banner -->
 <!--copy rights start here-->
 <div class="copyrights">
-	 <p>© 2017 Esteem. All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">Vikram Singh Gurjar</a> </p>
+	 <p> Design by  <a href="http://w3layouts.com/" target="_blank">Vikram Singh Gurjar</a> </p>
 </div>	
 <!--copy rights end here-->
 <!-- js -->
@@ -752,71 +681,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<script src="static/js/light.js"></script>
 				<!-- Chart code -->
 	 <script>
+	 	//alert("{{data[0]}}")
 var chart = AmCharts.makeChart("chartdiv", {
     "theme": "light",
     "type": "serial",
     "startDuration": 2,
-    "dataProvider": [{
-        "country": "USA",
-        "visits": 4025,
-        "color": "#FF0F00"
-    }, {
-        "country": "China",
-        "visits": 1882,
-        "color": "#FF6600"
-    }, {
-        "country": "Japan",
-        "visits": 1809,
-        "color": "#FF9E01"
-    }, {
-        "country": "Germany",
-        "visits": 1322,
-        "color": "#FCD202"
-    }, {
-        "country": "UK",
-        "visits": 1122,
-        "color": "#F8FF01"
-    }, {
-        "country": "France",
-        "visits": 1114,
-        "color": "#B0DE09"
-    }, {
-        "country": "India",
-        "visits": 984,
-        "color": "#04D215"
-    }, {
-        "country": "Spain",
-        "visits": 711,
-        "color": "#0D8ECF"
-    }, {
-        "country": "Netherlands",
-        "visits": 665,
-        "color": "#0D52D1"
-    }, {
-        "country": "Russia",
-        "visits": 580,
-        "color": "#2A0CD0"
-    }, {
-        "country": "South Korea",
-        "visits": 443,
-        "color": "#8A0CCF"
-    }, {
-        "country": "Canada",
-        "visits": 441,
-        "color": "#CD0D74"
-    }, {
-        "country": "Brazil",
-        "visits": 395,
-        "color": "#754DEB"
-    }, {
-        "country": "Italy",
-        "visits": 386,
-        "color": "#DDDDDD"
-    }, {
-        "country": "Taiwan",
-        "visits": 338,
-        "color": "#333333"
-    }],
+    "dataProvider": [
+     {% for i in range(len) %}
+                        {country: '{{ data["Name of State / UT"][i] }}', visits: {{data['Deaths**'][i]}} ,"color":"'#'+Math.floor(Math.random()*16777215).toString(16)"},
+                    {% endfor %}
+    ],
     "valueAxes": [{
         "position": "left",
         "axisAlpha":0,
@@ -852,114 +726,45 @@ var chart = AmCharts.makeChart("chartdiv", {
 }, 0);
 </script>
 <!-- Chart code -->
+<!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 <script>
-var chart = AmCharts.makeChart("chartdiv1", {
-    "type": "serial",
-	"theme": "light",
-    "legend": {
-        "horizontalGap": 10,
-        "maxColumns": 1,
-        "position": "right",
-		"useGraphSettings": true,
-		"markerSize": 10
-    },
-    "dataProvider": [{
-        "year": 2017,
-        "europe": 2.5,
-        "namerica": 2.5,
-        "asia": 2.1,
-        "lamerica": 0.3,
-        "meast": 0.2,
-        "africa": 0.1
-    }, {
-        "year": 2016,
-        "europe": 2.6,
-        "namerica": 2.7,
-        "asia": 2.2,
-        "lamerica": 0.3,
-        "meast": 0.3,
-        "africa": 0.1
-    }, {
-        "year": 2015,
-        "europe": 2.8,
-        "namerica": 2.9,
-        "asia": 2.4,
-        "lamerica": 0.3,
-        "meast": 0.3,
-        "africa": 0.1
-    }],
-    "valueAxes": [{
-        "stackType": "regular",
-        "axisAlpha": 0.5,
-        "gridAlpha": 0
-    }],
-    "graphs": [{
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "Europe",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "europe"
-    }, {
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "North America",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "namerica"
-    }, {
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "Asia-Pacific",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "asia"
-    }, {
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "Latin America",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "lamerica"
-    }, {
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "Middle-East",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "meast"
-    }, {
-        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-        "fillAlphas": 0.8,
-        "labelText": "[[value]]",
-        "lineAlpha": 0.3,
-        "title": "Africa",
-        "type": "column",
-		"color": "#000000",
-        "valueField": "africa"
-    }],
-    "rotate": true,
-    "categoryField": "year",
-    "categoryAxis": {
-        "gridPosition": "start",
-        "axisAlpha": 0,
-        "gridAlpha": 0,
-        "position": "left"
-    },
-    "export": {
-    	"enabled": true
-     }
-});
+am4core.ready(function() {
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+// Create chart instance
+var chart = am4core.create("chartdiv1", am4charts.PieChart);
+
+// Add data
+chart.data = [    {% for i in range(len) %}
+                        {country: '{{ data["Name of State / UT"][i] }}', visits: {{data['Deaths**'][i]}} },
+                    {% endfor %}];
+
+// Add and configure Series
+var pieSeries = chart.series.push(new am4charts.PieSeries());
+pieSeries.dataFields.value = "visits";
+pieSeries.dataFields.category = "country";
+pieSeries.innerRadius = am4core.percent(50);
+pieSeries.ticks.template.disabled = true;
+pieSeries.labels.template.disabled = true;
+
+var rgm = new am4core.RadialGradientModifier();
+rgm.brightnesses.push(-0.8, -0.8, -0.5, 0, - 0.5);
+pieSeries.slices.template.fillModifier = rgm;
+pieSeries.slices.template.strokeModifier = rgm;
+pieSeries.slices.template.strokeOpacity = 0.4;
+pieSeries.slices.template.strokeWidth = 0;
+
+chart.legend = new am4charts.Legend();
+chart.legend.position = "left";
+
+}); // end am4core.ready()
+
 </script>
 
 	<!-- //amcharts -->
@@ -975,14 +780,21 @@ var chart = AmCharts.makeChart("chartdiv1", {
 			<!-- script-for-menu -->
 
 <!-- /circle-->
+
 	 <script type="text/javascript" src="static/js/circles.js"></script>
 					         <script>
+					         	var all=[]
+	           all.push( parseInt("{{tdeath}}"))
+              all.push( parseInt("{{total_confirm}}"))
+              all.push( parseInt("{{total_recover}}"))
+              all.push( parseInt("{{total_active}}"))
+  
 								var colors = [
 										['#ffffff', '#fd9426'], ['#ffffff', '#fc3158'],['#ffffff', '#53d769'], ['#ffffff', '#147efb']
 									];
 								for (var i = 1; i <= 7; i++) {
 									var child = document.getElementById('circles-' + i),
-										percentage = 30 + (i * 10);
+										percentage = all[i-1];
 										
 									Circles.create({
 										id:         child.id,
@@ -990,7 +802,7 @@ var chart = AmCharts.makeChart("chartdiv1", {
 										radius:     80,
 										width:      10,
 										number:   	percentage / 1,
-										text:       '%',
+										text:       ' ok',
 										colors:     colors[i - 1]
 									});
 								}
@@ -1056,7 +868,6 @@ var chart = AmCharts.makeChart("chartdiv1", {
 <script src="static/js/scripts.js"></script>
 
 <script type="text/javascript" src="static/js/bootstrap-3.1.1.min.js"></script>
-
 
 </body>
 </html>

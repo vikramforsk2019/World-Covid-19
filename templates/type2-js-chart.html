@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HELLO</title>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">    
+window.onload = function () {
+  alert("{{data[0]['Country_Region']}}")
+
+var chart = new CanvasJS.Chart("chartContainer", {
+        title:{
+            text: "My First Chart in CanvasJS"              
+        },
+        data: [              
+        {
+            // Change type to "doughnut", "line", "splineArea", etc.
+            type: "column",
+            dataPoints:[ {% for workflow in data %}
+                        {label: '{{ workflow["Country_Region"] }}', y: {{workflow['Deaths']}} },
+                    {% endfor %}]              //or          getdata()
+        }
+        ]
+    });
+    chart.render();
+}
+</script>
+
+   </head>
+<body>
+    <table border="1">
+    <thead>
+      <tr>
+        {% for header in data.keys() %}
+          {% if header != 'image' %}
+            <th>{{header}}</th>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in data %}
+        <tr>
+          <td>{{row['Country_Region'] }}</td>
+             <td>{{row['Active'] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+</body> 
+</html>

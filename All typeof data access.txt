@@ -1,0 +1,74 @@
+*********************All type of data passing/routing on server to vlient side********************
+
+(1)------->Dataframe in dict--->dictionary form data
+{
+'Name of State / UT': 
+{0: 'Andaman and Nicobar Islands', 1: 'Andhra Pradesh', 2: 'Arunachal Pradesh', 3: 'Assam', 4: 'Bihar',   5: 'Chandigarh', 6: 'Chhattisgarh', 7: 'Dadra and Nagar Haveli and Daman and Diu', 8: 'Delhi', 9: 'Goa', 10: 'Gujarat', 11: 'Haryana', 12: 'Himachal Pradesh', 13: 'Jammu and Kashmir', 14: 'Jharkhand', 15: 'Karnataka', 16: 'Kerala', 17: 'Ladakh', 18: 'Madhya Pradesh', 19: 'Maharashtra', 20: 'Manipur', 21: 'Meghalaya', 22: 'Mizoram', 23: 'Nagaland', 24: 'Odisha', 25: 'Puducherry', 26: 'Punjab', 27: 'Rajasthan', 28: 'Sikkim', 29: 'Tamil Nadu', 30: 'Telangana', 31: 'Tripura', 32: 'Uttarakhand', 33: 'Uttar Pradesh', 34: 'West Bengal'}, 
+'Active Cases*': 
+{0: 5, 1: 2765, 2: 84, 3: 2081, 4: 2261, 5: 54, 6: 891, 7: 34, 8: 24032, 9: 490, 10: 5742, 11: 4117, 12: 174, 13: 2593, 14: 832, 15: 2959, 16: 1340, 17: 468, 18: 2666, 19: 53030, 20: 367, 21: 18, 22: 111, 23: 80, 24: 1190, 25: 98, 26: 717, 27: 2836, 28: 64, 29: 19679, 30: 2412, 31: 760, 32: 684, 33: 4948, 34: 5552},
+ 'Cured/Discharged/Migrated*':
+  {0: 33.0, 1: 3314.0, 2: 7.0, 3: 1960.0, 4: 4170.0, 5: 293.0, 6: 763.0, 7: 2.0, 8: 15823.0, 9: 74.0, 10: 16325.0, 11: 3003.0, 12: 337.0, 13: 2389.0, 14: 905.0, 15: 3955.0, 16: 1102.0, 17: 80.0, 18: 7677.0, 19: 50978.0, 20: 91.0, 21: 25.0, 22: 1.0, 23: 88.0, 24: 2708.0, 25: 91.0, 26: 2356.0, 27: 9566.0, 28: 4.0, 29: 24547.0, 30: 2377.0, 31: 315.0, 32: 1111.0, 33: 8268.0, 34: 5060.0},
+ 'Deaths**': 
+ {0: 0.0, 1: 84.0, 2: 0.0, 3: 8.0, 4: 39.0, 5: 5.0, 6: 8.0, 7: 0.0, 8: 1327.0, 9: 0.0, 10: 1477.0, 11: 88.0, 12: 7.0, 13: 59.0, 14: 8.0, 15: 86.0, 16: 19.0, 17: 1.0, 18: 459.0, 19: 3950.0, 20: 0.0, 21: 1.0, 22: 0.0, 23: 0.0, 24: 11.0, 25: 5.0, 26: 67.0, 27: 292.0, 28: 0.0, 29: 435.0, 30: 185.0, 31: 1.0, 32: 24.0, 33: 399.0, 34: 475.0},
+ 'Total Confirmed cases*': 
+ {0: 38, 1: 6163, 2: 91, 3: 4049, 4: 6470, 5: 352, 6: 1662, 7: 36, 8: 41182, 9: 564, 10: 23544, 11: 7208, 12: 518, 13: 5041, 14: 1745, 15: 7000, 16: 2461, 17: 549, 18: 10802, 19: 107958, 20: 458, 21: 44, 22: 112, 23: 168, 24: 3909, 25: 194, 26: 3140, 27: 12694, 28: 68, 29: 44661, 30: 4974, 31: 1076, 32: 1819, 33: 13615, 34: 11087},
+ 'log':
+  {0: 92.6586, 1: 79.0, 2: 94.5, 3: 93.0, 4: 85.3131, 5: 76.79, 6: 82.0, 7: 72.8397, 8: 77.22, 9: 74.08, 10: 72.0, 11: 76.0, 12: 78.0, 13: 76.5762, 14: 85.5, 15: 76.0, 16: 76.5, 17: 77.577049, 18: 78.5, 19: 75.0, 20: 94.0, 21: 91.33, 22: 93.0, 23: 94.25, 24: 84.42, 25: 79.82, 26: 72.32, 27: 74.0, 28: 88.5, 29: 78.0, 30: 79.0193, 31: 92.0, 32: 79.25, 33: 80.75, 34: 88.0},
+ lat':
+  {0: 11.7401, 1: 16.0, 2: 28.0, 3: 26.0, 4: 25.0961, 5: 30.73, 6: 21.5, 7: 20.4283, 8: 28.67, 9: 15.33, 10: 23.0, 11: 29.0, 12: 31.0, 13: 33.7782, 14: 23.75, 15: 13.5, 16: 10.0, 17: 34.152588, 18: 23.5, 19: 19.5, 20: 25.0, 21: 25.5, 22: 23.0, 23: 26.0, 24: 20.5, 25: 11.93, 26: 30.86, 27: 26.0, 28: 27.75, 29: 11.0, 30: 18.1124, 31: 24.0, 32: 30.25, 33: 27.25, 34: 24.0}
+}
+
+
+(2)------>json data--->
+[
+  {
+    "id": 0,
+    "name": "Uthappizza",
+    "image": "https://i.imgur.com/tDnjTXf.jpg",
+    "category": "mains",
+    "label": "Hot",
+    "price": "4.99",
+    "description": "A unique combination of Indian Uthappam (pancake) and Italian pizza"
+  },
+  {
+    "id": 1,
+    "name": "Zucchipakoda",
+    "image": "https://i.imgur.com/xkUElXq.jpg",
+    "category": "appetizer",
+    "label": "",
+    "price": "1.99",
+    "description": "Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce"
+  },
+  {
+    "id": 2,
+    "name": "Vadonut",
+    "image": "https://i.imgur.com/anUAlqF.jpg",
+    "category": "appetizer",
+    "label": "New",
+    "price": "1.99",
+    "description": "A quintessential ConFusion experience, is it a vada or is it a donut?"
+  },
+  
+  {
+    "id": 9,
+    "name": "Toenail Zingy",
+    "image": "https://i.imgur.com/IpG3YOT.jpg",
+    "category": "appetizer",
+    "label": "weird",
+    "price": "0.99",
+    "description": "Cooked Toenails of various animals"
+  }
+]
+
+
+-->read csv reader without df line by line--->convert dict-->
+[
+{'Name of State / UT': 'Nagaland', 'Active Cases*': '80', 'Cured/Discharged/Migrated*': '88.0', 'Deaths**': '0.0', 'Total Confirmed cases*': '168', 'log': '94.25', 'lat': '26'}, 
+{'Name of State / UT': 'Odisha', 'Active Cases*': '1190', 'Cured/Discharged/Migrated*': '2708.0', 'Deaths**': '11.0', 'Total Confirmed cases*': '3909', 'log': '84.42', 'lat': '20.5'}
+]
+
+#more explanation here
+https://linuxhint.com/parse_json_python/
+
+#jinja flask
+https://jinja.palletsprojects.com/en/2.10.x/templates/
