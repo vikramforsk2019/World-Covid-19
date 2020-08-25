@@ -72,3 +72,96 @@ https://linuxhint.com/parse_json_python/
 
 #jinja flask
 https://jinja.palletsprojects.com/en/2.10.x/templates/
+
+
+
+#Dict
+results=
+[OrderedDict(
+[
+('processing_time', 157.476), 
+('results', [OrderedDict([('box', OrderedDict([('xmin', 260), ('ymin', 731), ('xmax', 519), ('ymax', 797)])), ('plate', 'rj26ca6856'), ('region', OrderedDict([('code', 'in'), ('score', 0.972)])), ('vehicle', OrderedDict([('score', 0.661), ('type', 'Sedan'), ('box', OrderedDict([('xmin', 0), ('ymin', 240), ('xmax', 540), ('ymax', 830)]))])), ('score', 0.901), ('candidates', [OrderedDict([('score', 0.901), ('plate', 'rj26ca6856')]), OrderedDict([('score', 0.816), ('plate', 'rj26ca6b56')])]), ('dscore', 0.7535999999999999)])]),
+ ('filename', '1039_k0Hfr_carbabu.jpg'), 
+ ('version', 1), 
+ ('camera_id', None), 
+ ('timestamp', '2020-08-25T10:39:15.757326Z')
+ ]
+)]
+
+
+print(results[0]['results'][0]['plate'])  #print plate number
+
+
+
+#JSON
+results=
+[
+  {
+    "processing_time": 95.253,
+    "results": [
+      {
+        "box": {
+          "xmin": 260,
+          "ymin": 731,
+          "xmax": 519,
+          "ymax": 797
+        },
+        "plate": "rj26ca6856",
+        "region": {
+          "code": "in",
+          "score": 0.972
+        },
+        "vehicle": {
+          "score": 0.661,
+          "type": "Sedan",
+          "box": {
+            "xmin": 0,
+            "ymin": 240,
+            "xmax": 540,
+            "ymax": 830
+          }
+        },
+        "score": 0.901,
+        "candidates": [
+          {
+            "score": 0.901,
+            "plate": "rj26ca6856"
+          },
+          {
+            "score": 0.816,
+            "plate": "rj26ca6b56"
+          }
+        ],
+        "dscore": 0.7535999999999999
+      }
+    ],
+    "filename": "1040_Tv1xI_carbabu.jpg",
+    "version": 1,
+    "camera_id": null,
+    "timestamp": "2020-08-25T10:40:50.131898Z"
+  }
+]
+
+
+print(json.dumps(results[0]['results'][0]['plate'], indent=2)) #print plate number
+ 
+
+Converting JSON to Python Objects
+We can parse the above JSON string using json.loads() method from the json module. The result is a Python dictionary.
+to_python = json.loads(my_json_string)
+
+Converting Python Objects to JSON
+blog = {'URL': 'datacamp.com', 'name': 'Datacamp'}
+to_json= json.dumps(blog)
+
+
+json.load vs json.loads
+
+json.load is used when loading a file while json.loads(load string) is used when loading a string.
+
+
+json.dump vs json.dumps
+
+We use json.dump when we want to dump JSON into a file. json.dumps(dump string) is used when we need the JSON data as a string for parsing or printing.
+
+
